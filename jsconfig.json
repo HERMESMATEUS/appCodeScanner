@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./app/components/*"],
+      "@constants/*": ["./app/constants/*"],
+      "@assets/*": ["./app/assets/*"],
+      "@connect/*": ["./app/connect/*"],
+      "@generalsStyles/*": ["./app/generalsStyles/*"]
+    }
+  }
+}
