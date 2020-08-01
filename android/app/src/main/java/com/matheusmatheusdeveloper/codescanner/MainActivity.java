@@ -1,4 +1,4 @@
-package com.codescanner;
+package com.matheusmatheusdeveloper.codescanner;
 
 import com.facebook.react.ReactActivity;
 

@@ -23,6 +23,7 @@ export default function PaletteColorsComponent({ onPress }) {
 }
 
 const Item = ({ item, onPress }) => <TouchableOpacity
+    key={item}
     onPress={() => onPress(item)}
     style={{ ...styles.Item, backgroundColor: item }}
 />
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: WidthDP(328),
-        paddingHorizontal: WidthDP(10),
+        paddingHorizontal: WidthDP(24),
         paddingVertical: HeightDP(10),
         borderRadius: HeightDP(4),
         marginTop: HeightDP(10),

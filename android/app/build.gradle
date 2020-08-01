@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.codescanner"
+        applicationId "com.matheusmatheusdeveloper.codescanner"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
