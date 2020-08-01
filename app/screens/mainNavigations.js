@@ -7,7 +7,8 @@ import Colors from '@constants/colors';
 import { HeightDP, WidthDP } from '@constants/calculateSizes';
 import Images from '@constants/images';
 
-import createQR from './createQR/createQR';
+import CreateQR from './createQR/createQR';
+import ScannerQR from './scannerQR/scannerQR';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,8 +28,8 @@ export default function Navigations() {
                 }}
             >
                 <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarIcon: ({ focused }) => SelectImage('folderWhite', 24, 24, focused ? 1 : 0.3) }} />
-                <Tab.Screen name="createQR" component={createQR} options={{ tabBarIcon: ({ focused }) => SelectImage('qrWhite', 24, 24, focused ? 1 : 0.3) }} />
-                <Tab.Screen name="Settings2" component={HomeScreen} options={{ tabBarIcon: ({ focused }) => SelectImage('qrScannerWhite', 24, 24, focused ? 1 : 0.3) }} />
+                <Tab.Screen name="CreateQR" component={CreateQR} options={{ tabBarIcon: ({ focused }) => SelectImage('qrWhite', 24, 24, focused ? 1 : 0.3) }} />
+                <Tab.Screen name="ScannerQR" component={ScannerQR} options={{ tabBarIcon: ({ focused }) => SelectImage('qrScannerWhite', 24, 24, focused ? 1 : 0.3) }} />
             </Tab.Navigator>
         </NavigationContainer>
     );
