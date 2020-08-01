@@ -2,21 +2,19 @@ import React from 'react'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types';
 import Colors from '@constants/colors';
-import { HeightDP, FontSizeRP } from '@constants/calculateSizes';
+import { HeightDP, FontSizeRP, WidthDP } from '@constants/calculateSizes';
 
-// ButtonComponent.propTypes = {
-//     OnPress: PropTypes.func,
-//     Label: PropTypes.string,
-//     Disabled: PropTypes.bool,
-// };
+ButtonComponent.propTypes = {
+    OnPress: PropTypes.func,
+    Label: PropTypes.string,
+    Disabled: PropTypes.bool,
+};
 
-const ButtonComponent = ({ OnPress, Label, Disabled }) => (
-    <TouchableOpacity onPress={() => OnPress} disabled={Disabled} style={styles.Button}>
+export default function ButtonComponent({ OnPress, Label, Disabled = false }) {
+    return <TouchableOpacity onPress={() => OnPress()} disabled={Disabled} style={styles.Button}>
         <Text style={styles.Text}>{Label}</Text>
     </TouchableOpacity>
-)
-export default ButtonComponent;
-
+}
 
 const styles = StyleSheet.create({
     Text: {
@@ -30,6 +28,8 @@ const styles = StyleSheet.create({
         borderWidth: HeightDP(1),
         borderRadius: HeightDP(8),
         height: HeightDP(50),
+        paddingVertical: HeightDP(10),
+        paddingHorizontal: WidthDP(10),
         justifyContent: 'center',
         alignItems: 'center',
     }

@@ -14,14 +14,9 @@ export default function PaletteColorsComponent({ onPress }) {
         <View style={{ width: WidthDP(328), }} >
             <Text style={TextStyle.Body1}>{'Selecciona tu preferencia de color'}</Text>
             <View style={styles.container} >
-                <FlatList
-                    showsHorizontalScrollIndicator={false}
-                    horizontal={true}
-                    style={{ flex: 1 }}
-                    data={qrCodesColor}
-                    keyExtractor={item => item}
-                    renderItem={({ item }) => <Item item={item} onPress={onPress} />}
-                />
+                {
+                    qrCodesColor.map((item) => <Item item={item} onPress={onPress} />)
+                }
             </View>
         </View>
     )
@@ -34,7 +29,8 @@ const Item = ({ item, onPress }) => <TouchableOpacity
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         width: WidthDP(328),
         paddingHorizontal: WidthDP(10),
         paddingVertical: HeightDP(10),
@@ -46,8 +42,9 @@ const styles = StyleSheet.create({
         borderWidth: HeightDP(0.3),
         borderColor: Colors.white,
         marginRight: WidthDP(5),
-        borderRadius: HeightDP(20),
-        height: HeightDP(40),
-        width: WidthDP(40),
+        marginTop: HeightDP(5),
+        borderRadius: HeightDP(17.5),
+        height: HeightDP(35),
+        width: WidthDP(35),
     }
 });
