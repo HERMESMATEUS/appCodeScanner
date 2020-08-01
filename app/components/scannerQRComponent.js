@@ -1,11 +1,12 @@
 'use strict';
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet, Image, View, Animated } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import ButtonComponent from '@components/buttonComponent';
 import { HeightDP, WidthDP } from '@constants/calculateSizes';
 import Images from '@constants/images';
 import PropTypes from 'prop-types';
+import Colors from '@constants/colors';
 
 ScannerQRComponent.propTypes = {
     ChangeStatusCamera: PropTypes.func,
@@ -33,9 +34,9 @@ export default function ScannerQRComponent({ ChangeStatusCamera, startCamera, on
 
     return (
         <View style={{ flex: 1 }}>
-            <View style={styles.container} >
-                {
-                    startCamera ?
+            {
+                startCamera ?
+                    <View style={styles.container} >
                         <RNCamera
                             ref={ref => { camera = ref; }}
                             style={styles.preview}
@@ -44,11 +45,17 @@ export default function ScannerQRComponent({ ChangeStatusCamera, startCamera, on
                             androidRecordAudioPermissionOptions={androidRecordAudioPermissionOptions}
                             onBarCodeRead={({ data }) => onBarCodeRead(data)}
                         />
-                        : <View style={styles.preview} >
-                            <Image resizeMode='contain' style={styles.Image} source={Images.cameraOff} />
+                        <View style={styles.preview2}>
+                            <View style={styles.box}>
+                                {/* <View style={{ borderWidth: HeightDP(1), borderColor: Colors.default }} /> */}
+                            </View>
                         </View>
-                }
-            </View>
+                    </View>
+                    :
+                    <View style={styles.preview} >
+                        <Image resizeMode='contain' style={styles.Image} source={Images.cameraOff} />
+                    </View>
+            }
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', height: HeightDP(50), width: WidthDP(328), paddingHorizontal: WidthDP(40) }}>
                     <ButtonComponent OnPress={() => ChangeStatusCamera(true)} Label={'Iniciar'} />
@@ -69,6 +76,20 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    box: {
+        borderWidth: HeightDP(1),
+        borderColor: Colors.default,
+        width: WidthDP(250),
+        height: HeightDP(250),
+        justifyContent: 'center',
+    },
+    preview2: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        height: '100%',
+        width: WidthDP(328),
     },
     capture: {
         flex: 0,

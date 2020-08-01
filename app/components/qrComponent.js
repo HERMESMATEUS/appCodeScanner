@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types';
 import QRCode from "react-native-qrcode-svg";
 import { HeightDP, WidthDP, FontSizeRP } from '@constants/calculateSizes';
 import Colors from '@constants/colors';
 import WaterMark from '@components/waterMark';
+import Images from '@constants/images';
 
 QRComponent.propTypes = {
     valueCodificate: PropTypes.string,
     color: PropTypes.string,
 };
+
 
 export default function QRComponent({ valueCodificate, color = Colors.default }) {
     return <View style={styles.container} >
@@ -22,9 +24,9 @@ export default function QRComponent({ valueCodificate, color = Colors.default })
                             color={color}
                             backgroundColor={"white"}
                             size={HeightDP(200)}
-                            // logo = { require('../../../embed_logo_file_path') } // or logo={{uri: base64logo}}
-                            logoMargin={2}
-                            logoSize={20}
+                            logo={{ uri: Images.base64logo }}
+                            logoMargin={10}
+                            logoSize={40}
                             logoBorderRadius={10}
                             logoBackgroundColor={"transparent"}
                         />
