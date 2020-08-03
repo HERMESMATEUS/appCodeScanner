@@ -2,6 +2,7 @@ const Colors = {
     black: "#000000",
     black_medium: "#404040",
     black_low: "#1e2229",
+    // red: "#d7ab7b",
     red: "#a70f3c",
     white: "#fff",
     whiteOpacity5: "rgba(225,225,225,0.5)",

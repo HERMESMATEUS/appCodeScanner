@@ -1,14 +1,17 @@
 import types from '../types';
 
-export default function reducer(state = {}, action) {
+export default function reducer(state = { CodesScannerMine: [], CodesScannerOthers: [] }, action) {
     switch (action.type) {
-
-        case types.CODESCANNER:
+        case types.CODESCANNERMINE:
             return {
                 ...state,
-                CodesScanner: action.CodesScanner,
+                CodesScannerMine: [action.CodesScanner, ...state.CodesScannerMine],
             }
-
+        case types.CODESCANNERMINEOTHER:
+            return {
+                ...state,
+                CodesScannerOthers: [action.CodesScanner, ...state.CodesScannerOthers],
+            }
         default:
             return state;
     }

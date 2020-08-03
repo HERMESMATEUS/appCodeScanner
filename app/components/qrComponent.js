@@ -12,7 +12,6 @@ QRComponent.propTypes = {
     color: PropTypes.string,
 };
 
-
 export default function QRComponent({ valueCodificate, color = Colors.default }) {
     return <View style={styles.container} >
         <View style={[styles.container1, valueCodificate ? styles.backgroundWhite : styles.backgroundGrey]} >
