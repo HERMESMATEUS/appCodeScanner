@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { Text, TextInput, View, TouchableOpacity, Image, ScrollView } from 'react-native'
 import { HeightDP, WidthDP, FontSizeRP } from '@constants/calculateSizes';
 import Colors from '@constants/colors';
 import Images from '@constants/images';
@@ -20,7 +20,7 @@ export default function ModalComponent({ Show, Title, ValueCode, Close, Custom =
                         DataJSX
                         :
                         <ScrollView>
-                            <Text style={{ marginTop: HeightDP(15), color: 'white', fontSize: FontSizeRP(12) }}>{ValueCode}</Text>
+                            <TextInput  value={ValueCode} style={{ marginTop: HeightDP(15), color: 'white', fontSize: FontSizeRP(12) }} />
                         </ScrollView>
                 }
 

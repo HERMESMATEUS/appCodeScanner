@@ -14,3 +14,16 @@ export const On_CodeScannerOthers = (CodesScanner) => {
     };
 };
 
+export const On_ALLCodeScannerOthers = (CodesScanner) => {
+    return {
+        type: types.ALLCODESCANNERMINEOTHER,
+        CodesScanner,
+    };
+};
+
+export const On_ALLCodeScannerMine = (CodesScanner) => {
+    return {
+        type: types.ALLCODESCANNERMINE,
+        CodesScanner,
+    };
+};

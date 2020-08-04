@@ -14,7 +14,7 @@ export default function TabsComponent({ SetOption, Navigation, Option, Text1, Te
                     <Text style={{ fontWeight: 'bold', color: Colors.red, fontSize: FontSizeRP(16) }}>{Text2}</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{ flex: 1, marginTop: HeightDP(20), marginBottom: HeightDP(10) }}>
+            <View style={{ flex: 1, marginTop: HeightDP(20), marginBottom: HeightDP(100) }}>
                 <ScrollView style={{}}>
                     <View style={{ borderRadius: HeightDP(8), backgroundColor: Colors.black_low, paddingVertical: HeightDP(10), paddingHorizontal: WidthDP(10), width: WidthDP(328), alignItems: 'center' }}>
                         {
@@ -61,5 +61,5 @@ const Item = ({ valueCodificate, color, Navigation, item }) => (
 )
 
 const NotFound = ({ Label }) => <View style={{ justifyContent: 'center', alignItems: 'center', height: HeightDP(60), width: WidthDP(220) }}>
-    <Text style={{ textAlign: 'center', color: Colors.white }}> No se encuentran codigos {Label} </Text>
+    <Text style={{ textAlign: 'center', color: Colors.white }}> No se encuentran códigos {Label} </Text>
 </View>

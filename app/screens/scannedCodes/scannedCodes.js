@@ -17,21 +17,21 @@ export default function ScannedCodes() {
 
     return (
         <MainContainer >
-            <Text style={TextStyle.Title1}>Codigos Creados y Escaneados</Text>
+            <Text style={TextStyle.Title1}>Códigos Creados y Escaneados</Text>
 
             <TabsComponent
                 SetOption={(position) => SetOption(position)}
                 Navigation={(item) => setGenerateCode({ DataCode: item, Show: true, })}
                 Option={option}
-                Text1={'Codigos Creados'}
-                Text2={'Codigos Escaneados'}
+                Text1={'Códigos Creados'}
+                Text2={'Códigos Escaneados'}
                 DataOption1={CodesScannerMine}
                 DataOption2={CodesScannerOthers}
             />
 
             <ModalComponent
                 Show={Show}
-                Title={'Codigo'}
+                Title={'Código'}
                 Custom={true}
                 Close={() => { }}
                 Close={() => setGenerateCode({ Show: false, DataCode: {} })}

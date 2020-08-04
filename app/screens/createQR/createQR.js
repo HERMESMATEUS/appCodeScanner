@@ -22,7 +22,7 @@ export default function CreateQR() {
 
     return <MainContainer>
         <ScrollView >
-            <Text style={TextStyle.Title1}>Crea tu codigo QR</Text>
+            <Text style={TextStyle.Title1}>Crea tu código QR</Text>
             <QRComponent valueCodificate={valueCodificate} color={color} />
             <View style={{ width: WidthDP(328) }} >
                 <InputComponent

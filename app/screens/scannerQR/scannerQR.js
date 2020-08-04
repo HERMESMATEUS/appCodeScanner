@@ -25,7 +25,7 @@ export default function ScannerQR() {
 
     return <MainContainer>
         <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
-            <Text style={TextStyle.Title1}>Escanea tu codigo</Text>
+            <Text style={TextStyle.Title1}>Escanea tu código</Text>
         </View>
 
         <ScannerQRComponent
@@ -36,7 +36,7 @@ export default function ScannerQR() {
 
         <ModalComponent
             Show={show}
-            Title={'Codigo'}
+            Title={'Código'}
             ValueCode={valueCode}
             Close={() => setDataCodigoScanned({ show: false })}
         />
